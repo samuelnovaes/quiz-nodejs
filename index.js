@@ -7,7 +7,7 @@ const bodyParser = require('body-parser')
 const session = require('express-session')
 const LevelStore = require('level-session-store')(session)
 const app = express()
-const port = process.evn.PORT || 8080
+const port = process.env.PORT || 8080
 
 app.use(compression())
 app.use(bodyParser.urlencoded({ extended: false }))
