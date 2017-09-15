@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Minhas Perguntas</title>
+	<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+	@html.include('includes/menu', model)
+	<fieldset class="float-box">
+		<h3>Adicionar pergunta</h3>
+		<form action="/quiz/myquestions" method="post">
+			<input type="text" name="question" placeholder="Pergunta" class="form-input" value="@(model.fields ? model.fields.question : '')"><br /><br />
+			<input type="text" class="form-input" placeholder="Resposta 1" name="r0" value="@(model.fields ? model.fields.r0 : '')"><input type="radio" name="right" value="0" @(model.fields && model.fields.right == '0' ? 'checked' : '')><br /><br />
+			<input type="text" class="form-input" placeholder="Resposta 2" name="r1" value="@(model.fields ? model.fields.r1 : '')"><input type="radio" name="right" value="1" @(model.fields && model.fields.right == '1' ? 'checked' : '')><br /><br />
+			<input type="text" class="form-input" placeholder="Resposta 3" name="r2" value="@(model.fields ? model.fields.r2 : '')"><input type="radio" name="right" value="2" @(model.fields && model.fields.right == '2' ? 'checked' : '')><br /><br />
+			<input type="text" class="form-input" placeholder="Resposta 4" name="r3" value="@(model.fields ? model.fields.r3 : '')"><input type="radio" name="right" value="3" @(model.fields && model.fields.right == '3' ? 'checked' : '')><br /><br />
+			<input type="text" class="form-input" placeholder="Resposta 5" name="r4" value="@(model.fields ? model.fields.r4 : '')"><input type="radio" name="right" value="4" @(model.fields && model.fields.right == '4' ? 'checked' : '')><br /><br />
+			<input type="submit" value="Adicionar" class="form-input">
+		</form>
+		@if(model.err){
+			<p class="error">@model.err</p>
+		}
+	</fieldset>
+	<fieldset class="float-box light">
+		<h3>Minhas perguntas</h3>
+		<ul>
+			@for(let i of model.questions){
+				<li>
+					<a href="/quiz/delete/@i.id" class="delete">@i.question</a>
+					<ul>
+						@for(let j = 0; j < i.options.length; j++){
+							<li class="@(i.right == j ? 'right' : '')">@i.options[j]</li>
+						}
+					</ul>
+				</li>
+			}
+		</ul>
+	</fieldset>
+</body>
+</html>

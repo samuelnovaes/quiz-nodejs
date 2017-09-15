@@ -1,0 +1,8 @@
+<ul class="menu">
+	<li>Bem vindo(a) @model.user.name - @model.user.score pontos</li>
+	<li><a href="/quiz">Perguntas</a></li>
+	<li><a href="/quiz/myquestions">Minhas perguntas</a></li>
+	<li><a href="/quiz/ranking">Ranking</a></li>
+	<li><a href="/logout">Sair</a></li>
+</ul>
+<hr>

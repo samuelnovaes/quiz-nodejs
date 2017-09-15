@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Perguntas</title>
+	<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+	@html.include('includes/menu', model)
+	<fieldset class="float-box light">
+		<h3>Perguntas</h3>
+		<ul>
+			@for(let i of model.questions){
+				<li>
+					@i.question
+					<ul>
+						@for(let j = 0; j < i.options.length; j++){
+							<li><a href="/quiz/check/@i.id/@j">@i.options[j]</a></li>
+						}
+					</ul>
+				</li>
+			}
+		</ul>
+	</fieldset>
+</body>
+</html>

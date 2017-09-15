@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Ranking</title>
+	<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+	@html.include('includes/menu', model)
+	<fieldset class="float-box light">
+		<h3>Ranking</h3>
+		@for(let i = 0; i < model.ranking.length; i++){
+			<li>@(i + 1)º - @model.ranking[i].name - @model.ranking[i].score pontos</li>
+		}
+	</fieldset>
+</body>
+</html>

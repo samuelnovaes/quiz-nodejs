@@ -1,0 +1,61 @@
+* {
+	font-family: arial, sans-serif;
+}
+
+.menu {
+	list-style-type: none;
+}
+
+.menu li {
+	display: inline;
+	padding: 8px;
+}
+
+.form-area {
+	width: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border: 1px solid #000;
+}
+
+.form-input {
+	padding: 5px;
+	border: 1px solid #000;
+}
+
+.error {
+	color: red;
+}
+
+.success {
+	color: green;
+}
+
+.right {
+	color: green;
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+.float-box {
+	margin-right: 10px;
+	float: left;
+}
+
+.delete:hover {
+	text-decoration: line-through;
+}
+
+.light {
+	border: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}

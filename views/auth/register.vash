@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Cadastro</title>
+	<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+	<fieldset class="form-area">
+		<h1>Registro</h1>
+		<form action="/auth/register" method="post">
+			<input type="text" name="login" placeholder="Login" class="form-input" value="@(model.fields ? model.fields.login : '')"><br /><br />
+			<input type="password" name="password" placeholder="Senha" class="form-input" value="@(model.fields ? model.fields.password : '')"><br /><br />
+			<input type="password" name="confirm" placeholder="Confirmar senha" class="form-input" value="@(model.fields ? model.fields.confirm : '')"><br /><br />
+			<input type="text" name="name" placeholder="Nome" class="form-input" value="@(model.fields ? model.fields.name : '')"><br /><br />
+			<input type="submit" value="Logar" class="form-input">
+		</form>
+		@if(model.err){
+			<p class="error">@model.err</p>
+		}
+		<p><a href="/auth">Logar</a></p>
+	</fieldset>
+</body>
+</html>

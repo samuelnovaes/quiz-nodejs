@@ -1,0 +1,21 @@
+{
+	"name": "quiz",
+	"version": "1.0.0",
+	"description": "Quiz em Node.js",
+	"dependencies": {
+		"body-parser": "^1.18.1",
+		"compression": "^1.7.0",
+		"express": "^4.15.4",
+		"express-session": "^1.15.5",
+		"level": "^1.7.0",
+		"level-session-store": "^2.0.2",
+		"nano-sql": "^0.9.1",
+		"serve-static": "^1.12.4",
+		"vash": "^0.12.2"
+	},
+	"scripts": {
+		"start": "node index.js"
+	},
+	"author": "Samuel Novaes",
+	"license": "ISC"
+}
