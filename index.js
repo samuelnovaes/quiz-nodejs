@@ -7,6 +7,7 @@ const bodyParser = require('body-parser')
 const session = require('express-session')
 const LevelStore = require('level-session-store')(session)
 const app = express()
+const port = process.evn.PORT || 8080
 
 app.use(compression())
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -47,7 +48,7 @@ nSQL('Questions').model([
 ])
 
 nSQL().connect().then(()=>{
-	app.listen(8080, ()=>{
-		console.log('Server running in http://localhost:8080')
+	app.listen(port, ()=>{
+		console.log('Server running in http://localhost:'+port)
 	})
 })
