@@ -7,9 +7,9 @@
 		"compression": "^1.7.0",
 		"express": "^4.15.4",
 		"express-session": "^1.15.5",
-		"level": "^1.7.0",
+		"level": "^4.0.0",
 		"level-session-store": "^2.0.2",
-		"nano-sql": "^0.9.1",
+		"nano-sql": "^1.7.3",
 		"serve-static": "^1.12.4",
 		"vash": "^0.12.2"
 	},
